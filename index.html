@@ -99,7 +99,7 @@
   .badge { font-size: 11px; color: #000; background: #fff; border-radius: 6px; padding: 2px 7px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
   .proj.hide { display: none; }
   .proj .shot { margin: -24px -24px 18px; aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--line); border-radius: 18px 18px 0 0; background: #111; }
-  .proj .shot img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .4s, transform .4s; }
+  .proj .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top; filter: grayscale(1); transition: filter .4s, transform .4s; }
   .proj:hover .shot img { filter: none; transform: scale(1.03); }
   .demo { color: var(--text) !important; font-weight: 600; }
 
@@ -304,24 +304,24 @@ const DEMOS = {
   booknook: "",
 };
 const projects = [
-  { t: "Silsila", badge: "FYP", f: ["llm","web"], repo: "SilSila",
+  { t: "Silsila", badge: "FYP", f: ["llm","web"], repo: "SilSila", img: "assets/silsila.jpg",
     d: "Agent-based redistribution of near-expiry FMCG stock. Prophet forecasting and a Mesa multi-agent engine generate redistribution plans, with a clearance marketplace.",
     s: ["Prophet","Mesa","FastAPI","React","PostgreSQL"] },
-  { t: "BridgeRoman", f: ["llm","nlp"], repo: "BridgeRoman",
+  { t: "BridgeRoman", f: ["llm","nlp"], repo: "BridgeRoman", img: "assets/bridgeroman.jpg",
     d: "Urdu voice journal: Whisper speech-to-text, Llama 3.3 Roman-Urdu transliteration, FAISS semantic search and a LangGraph agent.",
     s: ["Whisper","Llama 3.3","LangGraph","FAISS"] },
-  { t: "Qwen2-VL Doc → Markdown", f: ["llm","cv"], repo: "genai_asg05",
-    d: "QLoRA fine-tune of a vision-language model that transcribes scanned pages into Markdown/LaTeX. ROUGE-L 0.66.",
-    s: ["Qwen2-VL","QLoRA","PEFT","Gradio"] },
+  { t: "VibeEats", f: ["llm","web"], repo: "vibe", img: "assets/vibeeats.jpg", img2: "assets/vibeeats-results.jpg",
+    d: "Describe a vibe and get matching restaurants in Pakistan. An LLM turns free text into OpenStreetMap queries, ranked by distance.",
+    s: ["Llama 3.3","Overpass API","Express","React"] },
   { t: "Book Nook", badge: "Live", f: ["web","llm"], repo: "booknook", live: "https://booknook-lac.vercel.app", img: "assets/booknook.jpg",
     d: "Cozy, Ghibli-inspired bookshelf with Row Level Security and streaming AI book recommendations.",
     s: ["React","TypeScript","Supabase","Groq"] },
+  { t: "Qwen2-VL Doc → Markdown", f: ["llm","cv"], repo: "genai_asg05",
+    d: "QLoRA fine-tune of a vision-language model that transcribes scanned pages into Markdown/LaTeX. ROUGE-L 0.66.",
+    s: ["Qwen2-VL","QLoRA","PEFT","Gradio"] },
   { t: "RAG Assistant", f: ["llm","web"], repo: "RAGAssistant",
     d: "Upload content and ask questions. A strict-context retrieval pipeline keeps answers grounded in your content.",
     s: ["LangChain","FAISS","FastAPI","React"] },
-  { t: "VibeEats", f: ["llm","web"], repo: "vibe",
-    d: "Describe a vibe and get matching restaurants in Pakistan. An LLM turns free text into OpenStreetMap queries, ranked by distance.",
-    s: ["Llama 3.3","Overpass API","Express","React"] },
   { t: "VALORANT Scouting Tool", badge: "Hackathon", f: ["llm","web"], repo: "c9hackathon",
     d: "Ask questions about esports match data in plain English. An LLM SQL-generation engine queries DuckDB.",
     s: ["Text-to-SQL","DuckDB","FastAPI","React"] },
@@ -350,7 +350,7 @@ const projects = [
 const grid = document.getElementById("grid");
 grid.innerHTML = projects.map(p => `
   <div class="proj reveal" data-f="${p.f.join(" ")}">
-    ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t} screenshot" loading="lazy"></div>` : ""}
+    ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t} screenshot" loading="lazy"${p.img2 ? ` onmouseenter="this.src='${p.img2}'" onmouseleave="this.src='${p.img}'"` : ""}></div>` : ""}
     <div class="top">
       <h4>${p.t}${p.badge ? `<span class="badge">${p.badge}</span>` : ""}</h4>
       <div class="links">${DEMOS[p.repo] ? `<a class="demo" href="${DEMOS[p.repo]}" target="_blank">▶ Demo</a>` : ""}${p.live ? `<a href="${p.live}" target="_blank">Live ↗</a>` : ""}<a href="${GH + p.repo}" target="_blank">Code ↗</a></div>
