@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Momina Waqar · AI/ML Engineer</title>
+<meta name="description" content="Momina Waqar, AI/ML Engineer: computer vision, LLM systems (RAG and agents) and data pipelines.">
+<meta property="og:title" content="Momina Waqar · AI/ML Engineer">
+<meta property="og:description" content="Computer vision, LLM systems (RAG and agents) and data pipelines.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/112104435?v=4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #000; --bg2: #0a0a0a; --card: #0d0d0d; --line: #222;
+    --text: #f5f5f5; --muted: #8a8a8a; --accent: #fff; --accent2: #9a9a9a; --ok: #d4d4d4;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Inter, system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .mono { font-family: "JetBrains Mono", monospace; }
+
+  /* nav */
+  nav { position: sticky; top: 0; z-index: 10; backdrop-filter: blur(12px); background: rgba(0,0,0,.75); border-bottom: 1px solid var(--line); }
+  nav .wrap { display: flex; align-items: center; justify-content: space-between; height: 62px; }
+  .logo { font-weight: 800; letter-spacing: .5px; }
+  .logo span { color: var(--accent); }
+  nav ul { display: flex; gap: 26px; list-style: none; font-size: 14px; color: var(--muted); }
+  nav ul a:hover { color: var(--text); }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 10px; font-weight: 600; font-size: 14px; transition: .2s; }
+  .btn-primary { background: #fff; color: #000; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(255,255,255,.18); }
+  .btn-ghost { border: 1px solid var(--line); color: var(--text); }
+  .btn-ghost:hover { border-color: var(--accent); }
+
+  /* hero */
+  .hero { position: relative; padding: 110px 0 90px; overflow: hidden; }
+  .hero::before { content: ""; position: absolute; width: 620px; height: 620px; right: -160px; top: -180px;
+    background: radial-gradient(circle, rgba(255,255,255,.07), transparent 65%); filter: blur(10px); }
+  .hero::after { content: ""; position: absolute; width: 480px; height: 480px; left: -200px; bottom: -220px;
+    background: radial-gradient(circle, rgba(255,255,255,.04), transparent 65%); }
+  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.5fr 1fr; gap: 50px; align-items: center; }
+  .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ok); border: 1px solid #333;
+    background: #0a0a0a; padding: 6px 12px; border-radius: 99px; margin-bottom: 22px; }
+  .tag i { width: 7px; height: 7px; border-radius: 50%; background: #fff; box-shadow: 0 0 10px #fff; }
+  h1 { font-size: clamp(40px, 6vw, 64px); line-height: 1.05; font-weight: 800; letter-spacing: -1.5px; }
+  h1 .grad { background: linear-gradient(180deg, #fff, #8a8a8a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .hero p.lead { color: var(--muted); font-size: 18px; margin: 20px 0 30px; max-width: 560px; }
+  .hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+  .avatar { width: 100%; max-width: 320px; aspect-ratio: 1; border-radius: 28px; justify-self: end; position: relative;
+    background: #fff; padding: 2px; transform: rotate(3deg); }
+  .avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 25px; display: block; background: var(--card); filter: grayscale(1) contrast(1.05); transition: filter .5s; }
+  .avatar:hover img { filter: none; }
+  .typed { color: var(--text); border-right: 2px solid var(--accent); padding-right: 3px; }
+
+  /* sections */
+  section { padding: 90px 0; border-top: 1px solid var(--line); }
+  .kicker { color: var(--accent); font-size: 13px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
+  h2 { font-size: 36px; font-weight: 800; letter-spacing: -.8px; margin-bottom: 40px; }
+
+  .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 50px; }
+  .about p { color: #cfcfcf; margin-bottom: 16px; font-size: 17px; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 20px; }
+  .stat b { display: block; font-size: 28px; font-weight: 800; background: linear-gradient(180deg, #fff, #8a8a8a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .stat span { color: var(--muted); font-size: 13px; }
+
+  /* experience */
+  .job-head { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .job-head h3 { font-size: 22px; }
+  .job-head .meta { color: var(--muted); font-size: 14px; }
+  .cases { display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 18px; }
+  .case { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; transition: .25s; position: relative; overflow: hidden; }
+  .case:hover { border-color: #555; transform: translateY(-4px); }
+  .case .ico { font-size: 26px; margin-bottom: 12px; filter: grayscale(1); }
+  .case h4 { font-size: 17px; margin-bottom: 8px; }
+  .case p { color: var(--muted); font-size: 14.5px; margin-bottom: 14px; }
+  .case .metrics { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .case .metrics span { font-size: 12px; font-weight: 600; color: #fff; background: #161616; border: 1px solid #333; padding: 3px 9px; border-radius: 7px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chips span { font-family: "JetBrains Mono", monospace; font-size: 11.5px; color: #bdbdbd; background: #111; border: 1px solid #2a2a2a; padding: 3px 8px; border-radius: 6px; }
+  .nda { color: var(--muted); font-size: 13px; margin-top: 18px; font-style: italic; }
+
+  /* projects */
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: -20px 0 28px; }
+  .filters button { background: transparent; color: var(--muted); border: 1px solid var(--line); padding: 7px 14px; border-radius: 99px; cursor: pointer; font: 500 13px Inter, sans-serif; transition: .2s; }
+  .filters button.on, .filters button:hover { color: var(--text); border-color: #fff; background: #151515; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 18px; }
+  .proj { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; transition: .25s; }
+  .proj:hover { border-color: #555; transform: translateY(-4px); }
+  .proj .top { display: flex; justify-content: space-between; align-items: start; margin-bottom: 10px; }
+  .proj h4 { font-size: 17px; }
+  .proj .links { display: flex; gap: 10px; font-size: 13px; color: var(--muted); white-space: nowrap; margin-left: 10px; }
+  .proj .links a:hover { color: var(--accent); }
+  .proj p { color: var(--muted); font-size: 14.5px; flex: 1; margin-bottom: 16px; }
+  .badge { font-size: 11px; color: #000; background: #fff; border-radius: 6px; padding: 2px 7px; font-weight: 700; margin-left: 8px; vertical-align: middle; }
+  .proj.hide { display: none; }
+  .proj .shot { margin: -24px -24px 18px; aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--line); border-radius: 18px 18px 0 0; background: #111; }
+  .proj .shot img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(1); transition: filter .4s, transform .4s; }
+  .proj:hover .shot img { filter: none; transform: scale(1.03); }
+  .demo { color: var(--text) !important; font-weight: 600; }
+
+  /* skills */
+  .skills { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 18px; }
+  .skill { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 22px; }
+  .skill h4 { font-size: 15px; margin-bottom: 12px; }
+
+  /* education + contact */
+  .edu { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 26px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  .edu p { color: var(--muted); }
+  .contact { text-align: center; }
+  .contact h2 { font-size: 44px; margin-bottom: 14px; }
+  .contact p { color: var(--muted); max-width: 520px; margin: 0 auto 30px; font-size: 17px; }
+  .contact .ctas { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  footer { text-align: center; padding: 30px; color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); }
+
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+  .reveal.in { opacity: 1; transform: none; }
+
+  @media (max-width: 820px) {
+    nav ul { display: none; }
+    .hero { padding: 70px 0 60px; }
+    .hero .wrap, .about { grid-template-columns: 1fr; }
+    .avatar { justify-self: start; max-width: 200px; order: -1; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#" class="logo">momina<span>.</span>ai</a>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn-ghost" href="Momina_Waqar_AI_ML_Engineer_Resume.pdf" target="_blank">Résumé ↓</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="tag"><i></i> Open to AI/ML Engineer roles · Remote-friendly</div>
+      <h1>Hi, I'm Momina.<br>I build <span class="grad">AI that works</span><br>outside the notebook.</h1>
+      <p class="lead">AI/ML Engineer working on <span class="typed" id="typed">computer vision</span>.
+        I train models, build LLM systems and data pipelines, and ship them to real clients.</p>
+      <div class="ctas">
+        <a class="btn btn-primary" href="#work">See my work →</a>
+        <a class="btn btn-ghost" href="https://github.com/momina0" target="_blank">GitHub</a>
+        <a class="btn btn-ghost" href="https://linkedin.com/in/mominawaqar0" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="avatar"><img src="https://avatars.githubusercontent.com/u/112104435?v=4" alt="Momina Waqar"></div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="kicker mono">01 · About</div>
+    <h2>A little about me</h2>
+    <div class="about reveal">
+      <div>
+        <p>I'm an <b>Associate AI/ML Engineer</b> and a Computer Science graduate of <b>FAST-NUCES</b> (Dean's List).
+           I work at the point where models meet real clients: vision systems that inspect damaged vehicles,
+           Claude-powered tools that read engineering documents, multi-agent RAG for finance teams, and the Airflow pipelines that feed them.</p>
+        <p>What I care about most is <b>honest evaluation</b>. A good demo isn't enough for me. I dig into where a model fails,
+           whether that's shortcut learning, leaky metrics or the wrong checkpoint, fix it, and explain the result in plain language.</p>
+        <p>Away from work I build things for fun: Urdu NLP tools, a gesture-controlled Spotify player,
+           and a Ghibli-inspired bookshelf. I've also led events for my university's biggest festival. 📸</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>5+</b><span>clients served end-to-end</span></div>
+        <div class="stat"><b>2.5M+</b><span>observations onboarded via Airflow</span></div>
+        <div class="stat"><b>224</b><span>checklist rules automated with Claude</span></div>
+        <div class="stat"><b>20+</b><span>ML projects on GitHub</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="kicker mono">02 · Experience</div>
+    <h2>What I build at work</h2>
+    <div class="job-head">
+      <div><h3>Associate AI/ML Engineer · MindVista</h3><div class="meta">AI/ML solutions for international clients · Remote</div></div>
+      <div class="meta mono">Apr 2026 – Present</div>
+    </div>
+    <div class="cases">
+      <div class="case reveal">
+        <div class="ico">🚗</div>
+        <h4>Vehicle damage detection</h4>
+        <p>Trained YOLO instance-segmentation models that find vehicle components and damage in photos, then audited DINOv2 classifiers to find out
+           where they actually fail (shortcut learning, crop artefacts, checkpoint selection).</p>
+        <div class="metrics"><span>0.72 box mAP50</span><span>2.4 ms / image</span><span>AUC 0.94 → honest 0.75</span><span>−24.5% false positives</span></div>
+        <div class="chips"><span>YOLO11-seg</span><span>DINOv2</span><span>PyTorch</span><span>RunPod</span><span>ONNX</span></div>
+      </div>
+      <div class="case reveal">
+        <div class="ico">🔄</div>
+        <h4>Airflow ETL for prediction markets</h4>
+        <p>Built and onboarded ingestion pipelines for a data platform that serves prediction-market and country-risk datasets
+           to customers and AI agents, including historical backfills and scheduling fixes.</p>
+        <div class="metrics"><span>6 product families</span><span>2.5M+ observations</span><span>83-day backfill</span></div>
+        <div class="chips"><span>Apache Airflow</span><span>SFTP / REST</span><span>Docker</span><span>Python</span></div>
+      </div>
+      <div class="case reveal">
+        <div class="ico">🏗️</div>
+        <h4>Civil-engineering plan checker</h4>
+        <p>An AI copilot that reads site-plan PDFs and checks them against a county submission checklist. Confidence gates send
+           uncertain items to human review, and the output is a cited comment letter and an Excel issue report. I led the live client demo.</p>
+        <div class="metrics"><span>224 rules</span><span>1,157 citations</span><span>human-in-the-loop</span></div>
+        <div class="chips"><span>Claude vision</span><span>Node.js</span><span>pdf-lib</span><span>Docker</span></div>
+      </div>
+      <div class="case reveal">
+        <div class="ico">📑</div>
+        <h4>Document automation with Claude</h4>
+        <p>Claude-integrated workflows that extract data from client documents, run Excel calculations and generate reports,
+           replacing slow manual processing.</p>
+        <div class="chips"><span>Claude API</span><span>Excel automation</span><span>Python</span></div>
+      </div>
+      <div class="case reveal">
+        <div class="ico">🧠</div>
+        <h4>Multi-agent RAG for finance</h4>
+        <p>A multi-agent retrieval system over a client's internal finance knowledge base, with specialised agents that
+           retrieve, reason and answer with source citations.</p>
+        <div class="chips"><span>RAG</span><span>Multi-agent</span><span>Vector search</span><span>LLMs</span></div>
+      </div>
+      <div class="case reveal">
+        <div class="ico">🤝</div>
+        <h4>Client delivery</h4>
+        <p>Requirements calls, technical scoping, MVP proposals and findings reports. I turn model results into plain-language decisions
+           for non-technical stakeholders.</p>
+        <div class="chips"><span>Scoping</span><span>Proposals</span><span>Demos</span><span>Reporting</span></div>
+      </div>
+    </div>
+    <p class="nda">Client names and proprietary details are withheld under NDA.</p>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <div class="kicker mono">03 · Projects</div>
+    <h2>Things I've built</h2>
+    <div class="filters">
+      <button class="on" data-f="all">All</button>
+      <button data-f="llm">LLMs & RAG</button>
+      <button data-f="cv">Computer Vision</button>
+      <button data-f="nlp">NLP</button>
+      <button data-f="web">Full-stack</button>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="kicker mono">04 · Toolkit</div>
+    <h2>Skills</h2>
+    <div class="skills reveal">
+      <div class="skill"><h4>🧠 ML & Computer Vision</h4><div class="chips"><span>PyTorch</span><span>YOLO (seg)</span><span>DINOv2 / ViT</span><span>OpenCV</span><span>MediaPipe</span><span>TensorFlow</span><span>scikit-learn</span><span>Prophet</span></div></div>
+      <div class="skill"><h4>✨ LLMs & GenAI</h4><div class="chips"><span>Claude API</span><span>RAG</span><span>Multi-agent</span><span>LangChain</span><span>LangGraph</span><span>LoRA / QLoRA</span><span>Hugging Face</span><span>Whisper</span></div></div>
+      <div class="skill"><h4>🔄 Data & MLOps</h4><div class="chips"><span>Airflow</span><span>ETL</span><span>FAISS</span><span>PostgreSQL</span><span>Supabase</span><span>MongoDB</span><span>Docker</span><span>RunPod</span><span>ONNX</span></div></div>
+      <div class="skill"><h4>🌐 Backend & Web</h4><div class="chips"><span>Python</span><span>TypeScript</span><span>FastAPI</span><span>Node / Express</span><span>React</span><span>REST</span><span>Vercel</span></div></div>
+    </div>
+    <div style="margin-top:40px" class="reveal">
+      <div class="kicker mono">Education</div>
+      <div class="edu">
+        <div><b>BS Computer Science</b>, FAST National University of Computer and Emerging Sciences<p>Dean's List (2 semesters) · Event Management Lead, DAIRA · Social Media Head, FAST Photography Society</p></div>
+        <div class="mono" style="color:var(--muted)">2022 – 2026</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap reveal">
+    <div class="kicker mono">05 · Contact</div>
+    <h2>Let's build something.</h2>
+    <p>I'm open to AI/ML engineering roles and interesting projects. The fastest way to reach me is email.</p>
+    <div class="ctas">
+      <a class="btn btn-primary" href="mailto:mominawaqar18@gmail.com">mominawaqar18@gmail.com</a>
+      <a class="btn btn-ghost" href="https://linkedin.com/in/mominawaqar0" target="_blank">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/momina0" target="_blank">GitHub</a>
+      <a class="btn btn-ghost" href="Momina_Waqar_AI_ML_Engineer_Resume.pdf" target="_blank">Résumé</a>
+    </div>
+  </div>
+</section>
+
+<footer>© <span id="yr"></span> Momina Waqar · Built by hand, no frameworks</footer>
+
+<script>
+const GH = "https://github.com/momina0/";
+// Paste LinkedIn post URLs for demo videos here (leave "" to hide the button)
+const DEMOS = {
+  BridgeRoman: "",
+  vibe: "",
+  booknook: "",
+};
+const projects = [
+  { t: "Silsila", badge: "FYP", f: ["llm","web"], repo: "SilSila",
+    d: "Agent-based redistribution of near-expiry FMCG stock. Prophet forecasting and a Mesa multi-agent engine generate redistribution plans, with a clearance marketplace.",
+    s: ["Prophet","Mesa","FastAPI","React","PostgreSQL"] },
+  { t: "BridgeRoman", f: ["llm","nlp"], repo: "BridgeRoman",
+    d: "Urdu voice journal: Whisper speech-to-text, Llama 3.3 Roman-Urdu transliteration, FAISS semantic search and a LangGraph agent.",
+    s: ["Whisper","Llama 3.3","LangGraph","FAISS"] },
+  { t: "Qwen2-VL Doc → Markdown", f: ["llm","cv"], repo: "genai_asg05",
+    d: "QLoRA fine-tune of a vision-language model that transcribes scanned pages into Markdown/LaTeX. ROUGE-L 0.66.",
+    s: ["Qwen2-VL","QLoRA","PEFT","Gradio"] },
+  { t: "Book Nook", badge: "Live", f: ["web","llm"], repo: "booknook", live: "https://booknook-lac.vercel.app", img: "assets/booknook.jpg",
+    d: "Cozy, Ghibli-inspired bookshelf with Row Level Security and streaming AI book recommendations.",
+    s: ["React","TypeScript","Supabase","Groq"] },
+  { t: "RAG Assistant", f: ["llm","web"], repo: "RAGAssistant",
+    d: "Upload content and ask questions. A strict-context retrieval pipeline keeps answers grounded in your content.",
+    s: ["LangChain","FAISS","FastAPI","React"] },
+  { t: "VibeEats", f: ["llm","web"], repo: "vibe",
+    d: "Describe a vibe and get matching restaurants in Pakistan. An LLM turns free text into OpenStreetMap queries, ranked by distance.",
+    s: ["Llama 3.3","Overpass API","Express","React"] },
+  { t: "VALORANT Scouting Tool", badge: "Hackathon", f: ["llm","web"], repo: "c9hackathon",
+    d: "Ask questions about esports match data in plain English. An LLM SQL-generation engine queries DuckDB.",
+    s: ["Text-to-SQL","DuckDB","FastAPI","React"] },
+  { t: "MAE from Scratch", f: ["cv"], repo: "MAE-Transformer",
+    d: "Masked Autoencoder with a ViT-B/16 encoder built from base PyTorch layers. Reconstructs 75%-masked images.",
+    s: ["PyTorch","ViT","Self-supervised"] },
+  { t: "GANs: Pix2Pix, CycleGAN, WGAN-GP", f: ["cv"], repo: "genai_assignment03",
+    d: "Paired and unpaired image translation, plus reproducing and fixing mode collapse.",
+    s: ["PyTorch","GANs","Gradio"] },
+  { t: "Gesture Spotify Player", f: ["cv"], repo: "SpotifyGestureControl",
+    d: "Control Spotify with hand gestures and type song searches on a virtual hover keyboard.",
+    s: ["MediaPipe","OpenCV","Spotify API"] },
+  { t: "Neural Storyteller", f: ["cv","nlp"], repo: "Storyteller",
+    d: "Image captioning with ResNet50 features and an LSTM Seq2Seq decoder, using greedy and beam search.",
+    s: ["ResNet50","LSTM","PyTorch"] },
+  { t: "Urdu Chatbot", f: ["nlp"], repo: "UrduChatBot",
+    d: "Seq2Seq Transformer chatbot for conversational Urdu, evaluated with BLEU, chrF and ROUGE-L.",
+    s: ["Transformer","PyTorch","Gradio"] },
+  { t: "Urdu → Roman Urdu", f: ["nlp"], repo: "UrduToRomanUrduGenerator",
+    d: "BiLSTM encoder-decoder transliteration with subword tokenization and BLEU evaluation.",
+    s: ["BiLSTM","Seq2Seq","SentencePiece"] },
+  { t: "Abstractive Summarizer", f: ["nlp"], repo: "SummarizationModel",
+    d: "Fine-tuned T5/BART for abstractive summarization, evaluated with ROUGE.",
+    s: ["T5","BART","Hugging Face"] },
+];
+const grid = document.getElementById("grid");
+grid.innerHTML = projects.map(p => `
+  <div class="proj reveal" data-f="${p.f.join(" ")}">
+    ${p.img ? `<div class="shot"><img src="${p.img}" alt="${p.t} screenshot" loading="lazy"></div>` : ""}
+    <div class="top">
+      <h4>${p.t}${p.badge ? `<span class="badge">${p.badge}</span>` : ""}</h4>
+      <div class="links">${DEMOS[p.repo] ? `<a class="demo" href="${DEMOS[p.repo]}" target="_blank">▶ Demo</a>` : ""}${p.live ? `<a href="${p.live}" target="_blank">Live ↗</a>` : ""}<a href="${GH + p.repo}" target="_blank">Code ↗</a></div>
+    </div>
+    <p>${p.d}</p>
+    <div class="chips">${p.s.map(x => `<span>${x}</span>`).join("")}</div>
+  </div>`).join("");
+
+document.querySelectorAll(".filters button").forEach(b => b.onclick = () => {
+  document.querySelectorAll(".filters button").forEach(x => x.classList.remove("on"));
+  b.classList.add("on");
+  document.querySelectorAll(".proj").forEach(c =>
+    c.classList.toggle("hide", b.dataset.f !== "all" && !c.dataset.f.split(" ").includes(b.dataset.f)));
+});
+
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .12 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+const words = ["computer vision", "RAG & AI agents", "document automation", "data pipelines", "model evaluation"];
+let wi = 0, ci = words[0].length, del = true;
+const el = document.getElementById("typed");
+setTimeout(function tick() {
+  const w = words[wi];
+  if (del) { ci--; if (ci === 0) { del = false; wi = (wi + 1) % words.length; } }
+  else { ci++; if (ci === words[wi].length) { del = true; el.textContent = words[wi]; return setTimeout(tick, 1800); } }
+  el.textContent = words[wi].slice(0, ci) || "​";
+  setTimeout(tick, del ? 45 : 85);
+}, 2200);
+document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
